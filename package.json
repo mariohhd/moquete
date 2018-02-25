@@ -1,0 +1,28 @@
+{
+  "name": "moquete",
+  "version": "1.0.0",
+  "description": "Moquete is an extension from Casperjs that includes more interesting functionality for your functional testing.",
+  "main": "moquete.js",
+  "scripts": {
+    "test": "casperjs test test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariohhd/moquete.git"
+  },
+  "keywords": [
+    "moquete",
+    "casperjs",
+    "phantomjs",
+    "testing",
+    "functional testing",
+    "automation"
+  ],
+  "author": "Mario Herreros Díaz <mario.herreros.diaz@gmail.com>",
+  "contributors": ["Marta Dorado Gonjar"],
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariohhd/moquete/issues"
+  },
+  "homepage": "https://github.com/mariohhd/moquete#readme"
+}
