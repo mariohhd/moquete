@@ -10,7 +10,7 @@ var moquete = new Moquete();
 moquete.test.begin('a twitter bootstrap dropdown can be opened', 2, function(test) {
     moquete._start('http://getbootstrap.com/2.3.2/javascript.html#dropdowns');
     moquete.thenClickAndWaitForSelector ('//div[@class="minicart-header js-show-minicart"]', '//a[@class="button _primary minicart-buy_cart js-go-to-full-cart"]', 
-        function() {
+        function() { 
             this.test.assertExist(xpath('//a[@class="button _primary minicart-buy_cart js-go-to-full-cart"]'), 'Button is present');
         },
         function() {
