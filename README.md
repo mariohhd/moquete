@@ -7,18 +7,22 @@ Moquete is an extension from Casperjs that includes more interesting functionali
 ```javascript
 var Moquete = require('./moquete').Moquete;
 var moquete = new Moquete();
-moquete.test.begin('a twitter bootstrap dropdown can be opened', 2, function(test) {
-    moquete._start('http://getbootstrap.com/2.3.2/javascript.html#dropdowns');
-    moquete.thenClickAndWaitForSelector ('//div[@class="minicart-header js-show-minicart"]', '//a[@class="button _primary minicart-buy_cart js-go-to-full-cart"]', 
-        function() { 
-            this.test.assertExist(xpath('//a[@class="button _primary minicart-buy_cart js-go-to-full-cart"]'), 'Button is present');
+var xpath   = require('casper').selectXPath;
+
+moquete.test.begin('simple test on github', 2, function (test) {
+    moquete._start('https://github.com', '[moquete] Open github page');
+    moquete.thenOpenAndExistXpath('https://github.com', '//a[text()="Sign in"]');
+    moquete.thenClickAndWaitForSelector ('//a[@class="text-bold text-white no-underline"][contains(@href,"login")]', '//input[@class="btn btn-primary btn-block"]', 
+        function() {
+            this.test.assertExist(xpath('//*[@id="login_field"]'), 'Login field is present');
+            this.test.assertExist(xpath('//*[@id="password"]'), 'Password field is present');
         },
         function() {
-            this.echo('Element does not exist', 'ERROR');
+            this.echo('Element does not exists', 'ERROR');
         }
     );
-    }).run(function() {
-        test.done();
+    moquete.run(function() {
+            this.test.done();
     });
 });
 ```
