@@ -2,9 +2,15 @@
   "name": "moquete",
   "version": "1.0.0",
   "description": "Moquete is an extension from Casperjs that includes more interesting functionality for your functional testing.",
-  "main": "moquete.js",
+  "main": "build/index.js",
   "scripts": {
-    "test": "casperjs test test.js"
+    "build": "babel src -d build",
+    "test": "casperjs test test/index.js"
+  },
+  "babel": {
+    "presets": [
+      "latest"
+    ]
   },
   "repository": {
     "type": "git",
@@ -18,11 +24,17 @@
     "functional testing",
     "automation"
   ],
-  "author": "Mario Herreros Díaz <mario.herreros.diaz@gmail.com>",
-  "contributors": ["Marta Dorado Gonjar"],
+  "contributors": [
+    "Mario Herreros Díaz <mario.herreros.diaz@gmail.com> (https://github.com/mariohhd/)",
+    "Marta Dorado Gonjar <doradomarta1@gmail.com> (https://github.com/martaDorado/)"
+  ],
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/mariohhd/moquete/issues"
   },
-  "homepage": "https://github.com/mariohhd/moquete#readme"
+  "homepage": "https://github.com/mariohhd/moquete#readme",
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-latest": "^6.16.0"
+  }
 }
