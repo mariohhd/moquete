@@ -84,6 +84,15 @@ var Moquete = function (_Casper) {
             this.waitForSelector(x(path), success, fail);
         }
     }, {
+        key: '_run',
+        value: function _run() {
+            var _this7 = this;
+
+            this.run(function () {
+                _this7.test.done();
+            });
+        }
+    }, {
         key: '_printTitle',
         value: function _printTitle() {
             this.echo('### ' + this.getTitle() + ' ###', 'INFO_BAR');

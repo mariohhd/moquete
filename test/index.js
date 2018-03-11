@@ -98,6 +98,21 @@ casper.test.begin('#moquete should has _waitForSelector', 1, {
     }
 });
 
+casper.test.begin('#moquete should has _run', 1, {
+    setUp: function(test) {
+        this.moquete = new Moquete();
+    },
+
+    tearDown: function(test) {
+        this.moquete = null;
+        delete this.moquete;
+    },
+    test: function(test) {
+        test.assertTruthy(this.moquete._run);
+        test.done();
+    }
+});
+
 casper.test.begin('#moquete should has printTitle', 1, {
     setUp: function(test) {
         this.moquete = new Moquete();

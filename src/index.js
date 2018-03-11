@@ -51,6 +51,10 @@ class Moquete extends Casper {
     _waitForSelector(path, success, fail) {
         this.waitForSelector(x(path), success, fail);
     };
+
+    _run() {
+        this.run(() => {this.test.done();});
+    }
     
     _printTitle() {
         this.echo('### ' + this.getTitle() + ' ###', 'INFO_BAR');
