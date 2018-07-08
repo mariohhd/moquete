@@ -64,6 +64,41 @@ class Moquete extends Casper {
         this.test.info("Clear cookies");
         this.page.clearCookies();
     };
+
+    _get(url, headers, then, timeout) {
+        const options = {
+            headers: headers,
+            method: 'get'
+        };
+        this.thenOpen(url, options, then, timeout);
+    };
+
+    _post(url, headers, data, then, timeout) {
+        const options = {
+            headers: headers,
+            data: data,
+            method: 'post'
+        };
+        this.thenOpen(url, options, then, timeout);
+
+    };
+
+    _put(url, headers, data, then, timeout) {
+        const options = {
+            headers: headers,
+            data: data,
+            method: 'put'
+        };
+        this.thenOpen(url, options, then, timeout);
+    };
+
+    _delete() {
+        const options = {
+            headers: headers,
+            method: 'delete'
+        };
+        this.thenOpen(url, options, then, timeout);
+    };
         
     _capturePage (debug_name) {
         var directory = 'captures/' + this.test.currentSuite.name;

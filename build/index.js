@@ -104,6 +104,44 @@ var Moquete = function (_Casper) {
             this.page.clearCookies();
         }
     }, {
+        key: '_get',
+        value: function _get(url, headers, then, timeout) {
+            var options = {
+                headers: headers,
+                method: 'get'
+            };
+            this.thenOpen(url, options, then, timeout);
+        }
+    }, {
+        key: '_post',
+        value: function _post(url, headers, data, then, timeout) {
+            var options = {
+                headers: headers,
+                data: data,
+                method: 'post'
+            };
+            this.thenOpen(url, options, then, timeout);
+        }
+    }, {
+        key: '_put',
+        value: function _put(url, headers, data, then, timeout) {
+            var options = {
+                headers: headers,
+                data: data,
+                method: 'put'
+            };
+            this.thenOpen(url, options, then, timeout);
+        }
+    }, {
+        key: '_delete',
+        value: function _delete() {
+            var options = {
+                headers: headers,
+                method: 'delete'
+            };
+            this.thenOpen(url, options, then, timeout);
+        }
+    }, {
         key: '_capturePage',
         value: function _capturePage(debug_name) {
             var directory = 'captures/' + this.test.currentSuite.name;

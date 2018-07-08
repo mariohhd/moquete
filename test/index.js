@@ -113,7 +113,7 @@ casper.test.begin('#moquete should has _run', 1, {
     }
 });
 
-casper.test.begin('#moquete should has printTitle', 1, {
+casper.test.begin('#moquete should has _printTitle', 1, {
     setUp: function(test) {
         this.moquete = new Moquete();
     },
@@ -128,7 +128,7 @@ casper.test.begin('#moquete should has printTitle', 1, {
     }
 });
 
-casper.test.begin('#moquete should has clearCookies', 1, {
+casper.test.begin('#moquete should has _clearCookies', 1, {
     setUp: function(test) {
         this.moquete = new Moquete();
     },
@@ -143,7 +143,7 @@ casper.test.begin('#moquete should has clearCookies', 1, {
     }
 });
 
-casper.test.begin('#moquete should has capturePage', 1, {
+casper.test.begin('#moquete should has _capturePage', 1, {
     setUp: function(test) {
         this.moquete = new Moquete();
     },
@@ -154,6 +154,81 @@ casper.test.begin('#moquete should has capturePage', 1, {
     },
     test: function(test) {
         test.assertTruthy(this.moquete._capturePage);
+        test.done();
+    }
+});
+
+casper.test.begin('#moquete should has _get', 1, {
+    setUp: function(test) {
+        this.moquete = new Moquete();
+    },
+
+    tearDown: function(test) {
+        this.moquete = null;
+        delete this.moquete;
+    },
+    test: function(test) {
+        test.assertTruthy(this.moquete._get);
+        test.done();
+    }
+});
+
+casper.test.begin('#moquete should has _post', 1, {
+    setUp: function(test) {
+        this.moquete = new Moquete();
+    },
+
+    tearDown: function(test) {
+        this.moquete = null;
+        delete this.moquete;
+    },
+    test: function(test) {
+        test.assertTruthy(this.moquete._post);
+        test.done();
+    }
+});
+
+casper.test.begin('#moquete should has _put', 1, {
+    setUp: function(test) {
+        this.moquete = new Moquete();
+    },
+
+    tearDown: function(test) {
+        this.moquete = null;
+        delete this.moquete;
+    },
+    test: function(test) {
+        test.assertTruthy(this.moquete._put);
+        test.done();
+    }
+});
+
+casper.test.begin('#moquete should has _delete', 1, {
+    setUp: function(test) {
+        this.moquete = new Moquete();
+    },
+
+    tearDown: function(test) {
+        this.moquete = null;
+        delete this.moquete;
+    },
+    test: function(test) {
+        test.assertTruthy(this.moquete._delete);
+        test.done();
+    }
+});
+
+casper.test.begin('#moquete should has _get', 1, {
+    setUp: function(test) {
+        this.moquete = new Moquete();
+    },
+
+    tearDown: function(test) {
+        this.moquete = null;
+        delete this.moquete;
+    },
+    test: function(test) {
+        test.assertTruthy(this.moquete._get);
         test.done();
     }
 });
